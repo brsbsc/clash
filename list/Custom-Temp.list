@@ -1,10 +1,19 @@
-DOMAIN-SUFFIX,downloadly.ir
-DOMAIN-SUFFIX,konga.com
-DOMAIN-SUFFIX,masonhacks.xyz
-DOMAIN-SUFFIX,rentshops.ru
-DOMAIN-SUFFIX,kinescope.io
+# 临时测试代理列表（确认长期保留后移入 Custom-Long）
+
+# === 运营商 ===
 DOMAIN-KEYWORD,vodafone
-DOMAIN-SUFFIX,bybit.com
-DOMAIN-SUFFIX,tensojapan.com
-;SRC-IP-CIDR,10.10.10.156/32,no-resolve
 DOMAIN-SUFFIX,spark.co.nz
+
+# === 电商、转运与交易 ===
+DOMAIN-SUFFIX,bybit.com
+DOMAIN-SUFFIX,konga.com
+DOMAIN-SUFFIX,rentshops.ru
+DOMAIN-SUFFIX,tensojapan.com
+
+# === 视频、下载与其它 ===
+DOMAIN-SUFFIX,downloadly.ir
+DOMAIN-SUFFIX,kinescope.io
+DOMAIN-SUFFIX,masonhacks.xyz
+
+# === 局域网测试设备 ===
+# SRC-IP-CIDR,10.10.10.156/32,no-resolve

@@ -17,86 +17,40 @@ https://cdn.jsdelivr.net/gh/brsbsc/clash@main/list/<文件名>
 
 ## 分类
 
-| 🎯 自定义分流 |  |
-| ---- | ---- |
-| [Custom-Long](#custom-long) | [Custom-Temp](#custom-temp) |
+| 🎯 自定义分流 / 直连优先 |  |  |
+| ---- | ---- | ---- |
+| [Custom-Long](#custom-long) | [Custom-Temp](#custom-temp) | [Direct](#direct) |
 
-| 🌐 IP 规则 |  |  |  |  |
-| ---- | ---- | ---- | ---- | ---- |
-| [TargetIP](#targetip) | [SourceIP](#sourceip) | [GlobalIp](#globalip) | [CS2](#cs2) | [gn01](#gn01) |
+| 🌐 IP 规则 |  |
+| ---- | ---- |
+| [TargetIP](#targetip) | [SourceIP](#sourceip) |
 
 | ✨ AI |  |  |  |  |
 | ---- | ---- | ---- | ---- | ---- |
-| [AI](#ai) | [AI2](#ai2) | [ChatGPT](#chatgpt) | [Claude](#claude) | [Gemini](#gemini) |
-| [Copilot](#copilot) | [Grok](#grok) | [MetaAi](#metaai) | [Perplexity](#perplexity) | [302](#302) |
+| [ChatGPT](#chatgpt) | [Claude](#claude) | [Gemini](#gemini) | [Grok](#grok) | [MetaAi](#metaai) |
 
-| 🍎 Apple |  |
+| 🧪 检测 / 拦截 |  |
 | ---- | ---- |
-| [Apple](#apple) | [AppleAI](#appleai) |
-
-| 🌏 代理 / 直连补充 |  |  |  |
-| ---- | ---- | ---- | ---- |
-| [Proxy](#proxy) | [Direct](#direct) | [Check](#check) | [Download](#download) |
-
-| 📦 上游快照（来自 blackmatrix7） |  |
-| ---- | ---- |
-| [ChinaDomain](#chinadomain) | [PrivateTracker](#privatetracker) |
-
-| 📺 媒体 / 娱乐 |  |  |  |  |
-| ---- | ---- | ---- | ---- | ---- |
-| [YouTube](#youtube) | [Crunchyroll](#crunchyroll) | [huanlekan](#huanlekan) | [Popcorn](#popcorn) | [Sex](#sex--pornhub) |
-| [Pornhub](#sex--pornhub) | | | | |
-
-| 💰 加密货币 / 博彩 |  |  |  |  |
-| ---- | ---- | ---- | ---- | ---- |
-| [Crypto](#crypto) | [xnb](#xnb) | [ww01](#ww01--ww02--ww03) | [ww02](#ww01--ww02--ww03) | [ww03](#ww01--ww02--ww03) |
-
-| 🚫 Reject |
-| ---- |
-| [Block](#block) |
+| [Check](#check) | [Block](#block) |
 
 ## 总览
 
 | 文件 | 内容 | 规则数 | 上游对应规则 | 当前引用位置 |
 | ---- | ---- | ---: | ---- | ---- |
-| Custom-Long.list | 长期走代理的补充域名 | 193 | — | **smart.yaml → Custom-Long** |
+| Custom-Long.list | 长期走代理的补充域名 | 153 | — | **smart.yaml → Custom-Long** |
 | Custom-Temp.list | 临时 / 测试走代理的域名 | 9 | — | **smart.yaml → Custom-Temp** |
+| Direct.list | 直连优先白名单（授时、国内公共 DNS 及自定义直连） | 9 | [Direct](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/Direct) | **smart.yaml → 国内**（第 5 位） |
 | TargetIP.list | 指定目标 IP | 5 | — | **smart.yaml → Custom-Long**、ini/nodnsleak4.ini（DIRECT） |
 | SourceIP.list | 指定局域网源 IP 直连 | 1 | — | **smart.yaml → 国内**、ini/nodnsleak4.ini、ini/clashfull.list |
-| GlobalIp.list | 全部 IPv4 | 1 | — | 未引用（备用） |
-| AI.list | ChatGPT + Claude + Gemini + Copilot + Grok 等合集 | 36 | — | ini/clashfull.list |
-| AI2.list | Meta AI + Perplexity | 3 | — | ini/clashfull.list |
-| ChatGPT.list | OpenAI / ChatGPT | 16 | [OpenAI](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/OpenAI)（35） | 未引用（smart.yaml 用上游 OpenAI） |
-| Claude.list | Claude / Anthropic | 8 | [Claude](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/Claude)（3） | **smart.yaml → Claude** |
-| Gemini.list | Gemini / AI Studio | 11 | [Gemini](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/Gemini)（13） | 未引用（smart.yaml 用上游 Gemini） |
-| Copilot.list | Copilot + Bing | 2 | [Copilot](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/Copilot)（51） | 未引用（smart.yaml 用上游 Copilot） |
-| Grok.list | Grok / xAI | 3 | 无 | **smart.yaml → Grok** |
-| MetaAi.list | Meta AI + Genspark / Manus / Skywork | 5 | 无 | **smart.yaml → Meta AI** |
-| Perplexity.list | Perplexity | 1 | 无 | 未引用 |
-| 302.list | 302.AI 中转 | 1 | 无 | 未引用 |
-| Apple.list | Apple Relay + Apple Intelligence | 11 | [AppleProxy](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/AppleProxy)（40） | 未引用 |
-| AppleAI.list | Apple Intelligence | 7 | 无 | 未引用 |
-| Proxy.list | 走代理的域名 + IP 段补充 | 307 | [Proxy](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/Proxy)（6985） | ini/clashfull.list |
-| Direct.list | 国内直连补充（机场域名、国内 DNS 等） | 584 | [Direct](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/Direct)（267） | **smart.yaml → 国内** |
-| Check.list | IP 检测 / 测速 / 分流测试站点 | 61 | [Speedtest](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/Speedtest)（8） | **smart.yaml → Test**、ini/clashfull.list |
-| Download.list | 国内下载直连（占位，空） | 0 | [Download](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/Download)（34） | 未引用 |
-| ChinaDomain.list | 国内域名（上游 China 快照） | 3700 | [China](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/China)（3721） | ini/nodnsleak4.ini、ini/nodnsleak5.ini |
-| PrivateTracker.list | PT 站（上游快照） | 277 | [PrivateTracker](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/PrivateTracker)（248） | ini/nodnsleak2.ini |
-| YouTube.list | YouTube 补充 IP 段 | 1 | [YouTube](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/YouTube)（183） | 未引用（smart.yaml 用上游 YouTube） |
-| Crunchyroll.list | Crunchyroll | 3 | 无 | 未引用 |
-| huanlekan.list | 欢乐看（台湾） | 2 | 无 | 未引用 |
-| Popcorn.list | popcorn.plus | 1 | 无 | 未引用 |
-| Sex.list | 成人站合集 | 3 | 无 | 未引用 |
-| Pornhub.list | Pornhub | 1 | 无 | 未引用 |
-| Crypto.list | 交易所（OKX / Binance / Bybit / Gate 等） | 21 | [Cryptocurrency](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/Cryptocurrency)（43）、[Binance](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/Binance)（12） | 未引用 |
-| xnb.list | TronLink 钱包 | 1 | 无 | 未引用 |
-| ww01 / ww02 / ww03.list | 博彩站点分组 | 9 / 4 / 8 | 无 | 未引用 |
-| CS2.list | CS2 / Valve 游戏服务器 IP 段 | 619 | 无 | 未引用 |
-| gn01.list | 指定专线 IP 段 | 3 | 无 | 未引用 |
+| ChatGPT.list | OpenAI / ChatGPT / Sora（含 Stripe 支付风控） | 12 | [OpenAI](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/OpenAI)（35） | 未引用（smart.yaml 用上游 OpenAI） |
+| Claude.list | Claude / Anthropic（含 Stripe 支付风控） | 12 | [Claude](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/Claude)（3） | **smart.yaml → Claude**、ini/clashfull.list |
+| Gemini.list | Gemini / AI Studio / NotebookLM / Antigravity | 38 | [Gemini](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/Gemini)（13） | 未引用（smart.yaml 用上游 Gemini） |
+| Grok.list | Grok / xAI | 6 | 无 | **smart.yaml → Grok**、ini/clashfull.list |
+| MetaAi.list | Meta AI + Perplexity / Groq / Dify / Genspark / Manus / Skywork | 11 | 无 | **smart.yaml → Meta AI**、ini/clashfull.list |
+| Check.list | IP 检测 / 测速 / 分流测试站点 | 59 | [Speedtest](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/Speedtest)（8） | **smart.yaml → Test**、ini/clashfull.list |
 | Block.list | Adobe 正版验证拦截 | 4 | [Adobe](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/Adobe)（137） | **smart.yaml → REJECT** |
 
-> - 规则数为去掉注释与空行后的有效行数，统计于 2026-11-16；上游括号内为上游 README 中的 TOTAL。
-> - "未引用"指当前 smart.yaml 和 ini/ 都没有用到。远端历史版本里的 `Clash-*.ini`、`proxy/*.ini` 曾引用过其中一部分（AI、ChatGPT、Perplexity、YouTube、xnb、ww01~03、gn01 等），改名或删除前先确认这些 ini 是否还在使用。
+> 规则数为去掉注释与空行后的有效行数，统计于 2026-11-18。
 
 ---
 
@@ -107,22 +61,20 @@ https://cdn.jsdelivr.net/gh/brsbsc/clash@main/list/<文件名>
 
 | 分段 | 内容 |
 | ---- | ---- |
-| AI、工具与软件服务 | 各类 AI 工具站、开发工具、软件官网 |
-| PT、影视与资源站 | PT 站、影视站、资源下载站 |
-| 红果 | 红果相关域名 |
-| IDC、云服务与网络工具 | VPS 商家、云服务、网络测试工具 |
-| 社区、论坛与交流 | 论坛、社区 |
-| 游戏与其它 (含特定 CDN) | 游戏站点及其 CDN |
-| 直播源 | 直播源域名 |
-| 特定后端/接口 | 指定的 API / 后端 |
-| 加密币 | 交易所、钱包等 |
+| AI、编程与中转服务 | AI 工具、编程助手、API 中转、SillyTavern 酒馆等 |
+| NAS、系统与软件工具 | Unraid、Proxmox、MoviePilot、桌面与硬件工具等 |
+| PT、影视、直播与网盘资源 | 各大 PT 站、Emby/影视站、IPTV 直播源、网盘资源 |
+| 游戏与 Meta Quest VR | 游戏官网/CDN、Switch 模拟器、Meta / Oculus / SideQuest VR |
+| 机场、VPS、CDN 与免费域名 | 机场订阅/面板、VPS 商家、Cloudflare、免费域名（`.edu.kg` / `.dpdns.org`） |
+| 运营商、接码、跨境支付与加密货币 | 海外运营商/eSIM、接码平台、土耳其支付/虚拟卡（OlduBil/PayTR/Oyunfor）、交易所 |
+| 社区、漫画、成人与其它站点 | 论坛社区（Linux.do / IDCFlare）、漫画站及其他杂项 |
 
 #### 规则统计
 | 类型 | 数量(条) |
 | ---- | ---- |
-| DOMAIN-SUFFIX | 183 |
+| DOMAIN-SUFFIX | 143 |
 | DOMAIN-KEYWORD | 10 |
-| TOTAL | 193 |
+| TOTAL | 153 |
 
 #### 使用说明
 - behavior: `classical`，format: `text`
@@ -146,7 +98,24 @@ https://cdn.jsdelivr.net/gh/brsbsc/clash@main/list/<文件名>
 
 #### 使用说明
 - smart.yaml 中紧跟 Custom-Long，对应独立策略组 **Custom-Temp**，可单独切换节点做测试。
-- 该行目前用 `;` 注释；list 文件建议统一用 `#` 注释。
+
+---
+
+## Direct
+
+#### 用途
+直连优先白名单：排在所有上游业务规则之前（`smart.yaml` 第 5 位），用于防止系统授时（`time.windows.com`）、国内公共 DNS 以及被上游代理规则误伤的国内域名走代理。
+
+#### 规则统计
+| 类型 | 数量(条) |
+| ---- | ---- |
+| DOMAIN-SUFFIX | 3 |
+| IP-CIDR | 6 |
+| TOTAL | 9 |
+
+#### 使用说明
+- smart.yaml 中对应 **国内**，位于 `Custom-Temp` 之后、`TEST` 与所有业务规则之前，优先级高于上游规则。
+- 以后遇到国内站点或自用服务器被上游规则误判走代理，直接加到本文件底部 `# === 自定义强制直连 ===` 即可立即抢回直连（注：`Custom-Long` 在第 3 位，若同一域名同时出现在两边则以 `Custom-Long` 为准）。
 
 ---
 
@@ -179,177 +148,88 @@ https://cdn.jsdelivr.net/gh/brsbsc/clash@main/list/<文件名>
 
 ---
 
-## GlobalIp
-
-`IP-CIDR,0.0.0.0/0`，匹配全部 IPv4。给需要"所有 IP 都走某个组"的模板备用，当前未引用。
-
----
-
-## AI
+## ChatGPT
 
 #### 用途
-AI 服务大合集，一个文件覆盖 ChatGPT、Claude、Gemini、Copilot、Grok、Groq、Dify、Genspark 等。适合**只想要一个 ✨ AI 策略组**的模板（如 ini/clashfull.list）。
+OpenAI / ChatGPT / Sora、高级语音实时通信（LiveKit 专属子域）及 Stripe 支付风控域名，已剔除 `sentry.io`、`intercom.io`、`challenges.cloudflare.com` 等无关第三方通用域名与废弃 Azure CDN。
 
 #### 规则统计
 | 类型 | 数量(条) |
 | ---- | ---- |
-| DOMAIN-SUFFIX | 35 |
-| DOMAIN | 1 |
-| TOTAL | 36 |
+| DOMAIN-SUFFIX | 11 |
+| DOMAIN-KEYWORD | 1 |
+| TOTAL | 12 |
 
 #### 使用说明
-- ⚠️ 包含 `googleapis.com`、`gstatic.com`、`x.com`、`bing.com` 这类**大范围域名**，引用后 Google / X 的大量普通流量也会进 AI 组。如果另有 Google、Twitter 组，要把 AI 放在它们后面，或删掉这些条目。
-- 拆分版本：ChatGPT / Claude / Gemini / Copilot / Grok 各自单独的 list。新增 AI 域名时，**合集和拆分版都要改**。
-
-## AI2
-
-AI 补充：Meta AI（`meta.ai`、`metademolab.com`）+ Perplexity。与 AI.list 搭配使用。
-
----
-
-## ChatGPT
-
-#### 用途
-OpenAI / ChatGPT。含 `DOMAIN-KEYWORD,openai`，以及登录、风控、支付依赖（auth0、arkoselabs、statsig、intercom、sentry、stripe）。
-
-#### 使用说明
-- smart.yaml 目前用上游 [OpenAI.list](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/OpenAI)（35 条，含 IP-ASN），比本文件更全；本文件留作备用 / 精简版。
-- `stripe.com`、`sentry.io` 会把其他网站的支付、报错上报也带进 ChatGPT 组，属预期行为。
+- 包含完整 Stripe 支付与反欺诈风控三件套：`stripe.com`、`stripe.network`（Radar 指纹与 IP 风控检测）、`stripecdn.com`。
+- smart.yaml 目前用上游 [OpenAI.list](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/OpenAI)（上游缺 `stripe.network` 且带无关 ASN）；可按需切到本文件。
 
 ---
 
 ## Claude
 
 #### 用途
-Claude / Anthropic。已合并原 nodnsleak/claude.list，smart.yaml 的 **Claude** 组引用本文件。
+Claude / Anthropic（含 Claude Code、Artifacts、官网静态资源 CDN 及 Stripe 支付风控域名）。smart.yaml 的 **Claude** 组引用本文件。
 
 #### 规则统计
 | 类型 | 数量(条) |
 | ---- | ---- |
-| DOMAIN-SUFFIX | 6 |
+| DOMAIN-SUFFIX | 9 |
 | DOMAIN-KEYWORD | 2 |
-| TOTAL | 8 |
+| DOMAIN | 1 |
+| TOTAL | 12 |
 
 #### 使用说明
-- 后缀：`anthropic.com`、`claude.ai`、`claude.com`、`clau.de`、`claudemcpclient.com`、`claudeusercontent.com`
-- 关键字：`anthropic`、`claude`（兜住新出现的子域名/新域名，代价是可能误伤含这两个词的其他站点）
-- 已有后缀规则时，不需要再为子域名单独加 `DOMAIN`。
+- 后缀：`anthropic.com`、`claude.ai`、`claude.com`、`clau.de`、`claudemcpclient.com`、`claudeusercontent.com` + Stripe 三件套（`stripe.com`、`stripe.network`、`stripecdn.com`），外加 `servd-anthropic-website.b-cdn.net`
+- 关键字：`anthropic`、`claude`
+- ⚠️ **支付风控注意**：ChatGPT 和 Claude 底层共用同一套 `stripe.*` 域名。由于 `smart.yaml` 中 `Claude` 排在 `ChatGPT` 前面，`stripe.*` 会优先命中风控更严的 `Claude` 组——日常给 Claude 续费天然同 IP；若给 ChatGPT 绑卡付款且两组节点不同，临时让 `Claude` 与 `ChatGPT` 指向同一节点即可。
 
 ---
 
 ## Gemini
 
 #### 用途
-Gemini、Bard、AI Studio、MakerSuite 及其 API（`generativelanguage.googleapis.com` 等）。
+Google AI 全家桶专属域名：Gemini、DeepMind、AI Studio、Generative Language API、NotebookLM、Jules、Google AI Labs、Stitch、Opal、Antigravity 与 Gemini Code Assist。已剔除误伤范围过大的 `googleusercontent.com`、`android.googleapis.com` 以及已废弃的 `bard` / `makersuite` 旧域名。
+
+#### 规则统计
+| 类型 | 数量(条) |
+| ---- | ---- |
+| DOMAIN-SUFFIX | 38 |
 
 #### 使用说明
-- ⚠️ 含 `googleusercontent.com`、`android.googleapis.com`，范围较大。
-- smart.yaml 用的是上游 [Gemini.list](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/Gemini)。
-
-## Copilot
-
-`DOMAIN,copilot.microsoft.com` + `DOMAIN-SUFFIX,bing.com`。上游 Copilot（51 条）更全，smart.yaml 用上游。
+- 比上游 [Gemini.list](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/Gemini) 覆盖更全（含 NotebookLM、Jules、Antigravity 等）且无 `gemini://` 协议脏数据，需要时可在 smart.yaml 中切到本文件。
 
 ---
 
 ## Grok
 
 #### 用途
-Grok / xAI。已合并原 nodnsleak/grok.list，smart.yaml 的 **Grok** 组引用本文件。上游没有 Grok 规则。
+Grok / xAI。smart.yaml 的 **Grok** 组引用本文件。上游没有 Grok 规则。
 
 #### 规则统计
 | 类型 | 数量(条) |
 | ---- | ---- |
-| DOMAIN-SUFFIX | 2 |
+| DOMAIN-SUFFIX | 5 |
 | DOMAIN-KEYWORD | 1 |
-| TOTAL | 3 |
+| TOTAL | 6 |
 
-内容：`grok.com`、`x.ai`（含 api / auth / groksandbox 等子域名）、关键字 `grok`。
+内容：`grok.com`、`grok.x.com`（只匹配子域，不吞 `x.com`）、`grokusercontent.com`、`grokipedia.com`、`x.ai` 及关键字 `grok`。
 
 ---
 
 ## MetaAi
 
 #### 用途
-Meta AI 及其他未单独分组的 AI 产品：`meta.ai`、`metademolab.com`、`genspark.ai`、`manus.im`、`skywork.ai`。smart.yaml 中对应 **Meta AI**。
+Meta AI 及其他未单独分组的 AI 产品：`meta.ai`、`metademolab.com`、`perplexity.ai`（含 `pplx.ai`、`pplx-res.cloudinary.com`）、`groq.com`、`dify.ai`（含 `difyai.com`）、`genspark.ai`、`manus.im`、`skywork.ai`。smart.yaml 中对应 **Meta AI**。
+
+#### 规则统计
+| 类型 | 数量(条) |
+| ---- | ---- |
+| DOMAIN-SUFFIX | 10 |
+| DOMAIN | 1 |
+| TOTAL | 11 |
 
 新出现、又不值得单独建组的 AI 产品，可以先放这里。
-
-## Perplexity
-
-`DOMAIN-SUFFIX,perplexity.ai`。上游无对应规则。
-
-## 302
-
-`DOMAIN-SUFFIX,proxy302.com`（302.AI API 中转）。上游无对应规则。
-
----
-
-## Apple
-
-#### 用途
-iCloud 专用代理（Private Relay）+ Apple Intelligence 相关域名，让 Apple Intelligence / Private Relay 走指定地区节点。
-
-#### 使用说明
-- 与 AppleAI.list 大部分重叠，额外包含 `DOMAIN-KEYWORD,apple-relay`、`gateway.icloud.com`、`apps.mzstatic.com`、`apple-dns.net`。
-- **不要**与上游 Apple.list（1592 条、整体 Apple 服务）混为一谈；如需一起用，本文件要放在上游 Apple 之前。
-
-## AppleAI
-
-只含 Apple Intelligence 的 7 个域名（guzzoni、smoot、apple-relay 等），是 Apple.list 的精简版。
-
----
-
-## Proxy
-
-#### 用途
-上游 Proxy / Global 没覆盖、但需要走代理的域名和 IP 段。文件内分段：
-
-| 分段 | 内容 |
-| ---- | ---- |
-| IP段匹配 | 机场、VPS 等 IP 段（约 144 条） |
-| AI | 零散 AI 站点 |
-| capcut / 小牛 / ssrdog / 小牛机场 | 特定服务、机场官网 |
-| 国外DNS | `dns.google`、`dns.quad9.net` 等 DoH |
-| 其他网站 | 其余需要代理的站点 |
-
-#### 规则统计
-| 类型 | 数量(条) |
-| ---- | ---- |
-| DOMAIN-SUFFIX | 163 |
-| IP-CIDR | 144 |
-| TOTAL | 307 |
-
-#### 使用说明
-- smart.yaml 目前用上游 Proxy + Global，**没有引用本文件**；ini/clashfull.list 中 → 🌍 国外。
-
----
-
-## Direct
-
-#### 用途
-国内直连补充：防止国内域名在 fake-ip 模式下未解析就落到代理。文件内分段：
-
-| 分段 | 内容 |
-| ---- | ---- |
-| MyList | 个人站点、机场官网（快猫、火烧、猫耳、BestVPN、小牛、硅谷、无界、HK-Beup、冰云、牛逼、九游等） |
-| 域名关键字匹配 | 少量 KEYWORD |
-| IP段匹配 / VPS | 国内 VPS、指定 IP |
-| 国内DNS | 国内 DoH / DNS 域名 |
-| 360、58、Alibaba、Baidu、Bilibili、ByteDance、CCTV、HuaWei、Iqiyi、PDD… | 按厂商分段的国内服务 |
-
-#### 规则统计
-| 类型 | 数量(条) |
-| ---- | ---- |
-| DOMAIN-SUFFIX | 571 |
-| IP-CIDR | 12 |
-| DOMAIN-KEYWORD | 1 |
-| TOTAL | 584 |
-
-#### 使用说明
-- smart.yaml 中对应 **国内**，位于规则末尾（上游 China 之前）。
-- 因为位置靠后，**挡不住**前面的业务规则（例如某个国内 CDN 被上游 Google 规则命中）。需要抢优先级的直连：新建一个 list，在 smart.yaml 中放到 Custom-Temp 之后。
-- 新增条目放进对应厂商分段，没有合适分段就放 MyList。
 
 ---
 
@@ -361,105 +241,14 @@ IP 归属检测、测速、分流测试站点（ipip.net、ipinfo.io、test-ipv6
 #### 规则统计
 | 类型 | 数量(条) |
 | ---- | ---- |
-| DOMAIN-SUFFIX | 58 |
+| DOMAIN-SUFFIX | 56 |
 | IP-CIDR | 2 |
 | DOMAIN | 1 |
-| TOTAL | 61 |
+| TOTAL | 59 |
 
 #### 使用说明
 - smart.yaml 中对应 **Test**（规则集名 `TEST / Domain`）；ini/clashfull.list 中 → 🌍 国外。
 - 注释掉的 Netflix 检测域名（`ichnaea-web.netflix.com` 等），需要测 Netflix 解锁时可临时打开。
-
-## Download
-
-占位文件，只有一行注释 `# 国内下载直连`。需要时参考上游 [Download](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/Download)。
-
----
-
-## ChinaDomain
-
-#### 用途
-国内域名直连。上游 [China](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/China) 在 **2024-11-17** 的快照（文件头注明），之后未同步。只给 ini/nodnsleak4、nodnsleak5 用；smart.yaml 直接引用上游 China。
-
-#### 规则统计
-| 类型 | 数量(条) |
-| ---- | ---- |
-| DOMAIN-SUFFIX | 3676 |
-| DOMAIN | 15 |
-| DOMAIN-KEYWORD | 9 |
-| TOTAL | 3700 |
-
-#### 更新
-```bash
-curl -fsSL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China.list -o ChinaDomain.list
-```
-或者把 ini 里的链接直接换成上游地址，然后删除本文件。
-
-## PrivateTracker
-
-PT 站点直连。上游 [PrivateTracker](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/PrivateTracker) 在 **2024-12-09** 的快照（277 条），只给 ini/nodnsleak2.ini 用。更新方式同 ChinaDomain（换成上游 `PrivateTracker/PrivateTracker.list`）。
-
----
-
-## YouTube
-
-`IP-CIDR,199.16.158.0/24,no-resolve`：上游 YouTube 规则之外的补充 IP 段。
-
-## Crunchyroll
-
-`crunchyroll.com`、`crunchyrollcdn.com`、`crunchyrollsvc.com`。上游无对应规则。
-
-## huanlekan
-
-欢乐看：`faintv.com.tw` + `120.241.29.0/24`。
-
-## Popcorn
-
-`popcorn.plus`。
-
-## Sex / Pornhub
-
-Sex.list：`t66y.com`、`pornhub.com`、`xvideos.com`；Pornhub.list 只有 `pornhub.com`（Sex 的子集，二选一引用即可）。
-
----
-
-## Crypto
-
-#### 用途
-加密货币交易所与相关站点，按交易所分段：博彩（1win、stake、bc.game）/ OKX / Binance / Bybit / Gate。
-
-#### 使用说明
-- 上游 [Cryptocurrency](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/Cryptocurrency)、[Binance](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/Binance) 可作补充。
-- 交易所对节点地区敏感，建议单独建组并固定到可用地区。
-
-## xnb
-
-`tronlink.org`（TronLink 钱包）。
-
-## ww01 / ww02 / ww03
-
-博彩站点分三组（便于分别指定节点）：
-
-| 文件 | 域名 |
-| ---- | ---- |
-| ww01.list | beer555 / beer777 / beer111、tek789、colourhim、sbogogo、u16888、potato777、sbobet |
-| ww02.list | isn99、isn88、whiskey1368、ps3838 |
-| ww03.list | nova88、novabet88、nova866、webook88、po288、168111.net、nv9891、livebook88 |
-
----
-
-## CS2
-
-#### 用途
-CS2 / Valve 游戏服务器 IP 段（619 条 IP-CIDR），游戏加速时让对战流量走指定节点。
-
-#### 使用说明
-- 第一条 `162.254.192.0/2` 掩码是 /2，范围约四分之一个 IPv4 空间，疑似笔误（Valve 的段通常是 `162.254.192.0/21`），启用前请核对。
-- 上游 Steam / SteamCN 只管商店与下载，不含对战服 IP。
-
-## gn01
-
-3 个指定 IP 段（`49.0.228.0/24`、`49.0.236.0/24`、`119.13.94.0/24`），文件里写成 `x.x.x.1/24`，内核按 /24 处理。
 
 ---
 
@@ -467,6 +256,11 @@ CS2 / Valve 游戏服务器 IP 段（619 条 IP-CIDR），游戏加速时让对�
 
 #### 用途
 拦截 Adobe 正版验证 / 统计：`adobe.com`、`adobedtm.com`、`adobe.io`、`omtrdc.net`。
+
+#### 规则统计
+| 类型 | 数量(条) |
+| ---- | ---- |
+| DOMAIN-SUFFIX | 4 |
 
 #### 使用说明
 - smart.yaml 中 → **REJECT**，位置在 AI / 业务规则之前。
@@ -500,7 +294,7 @@ CS2 / Valve 游戏服务器 IP 段（619 条 IP-CIDR），游戏加速时让对�
  ├─ 长期使用 ────────────── Custom-Long.list（放进对应分段）
  └─ 临时 / 不确定 ───────── Custom-Temp.list（确认后挪到 Custom-Long）
 需要直连？
- └─ 国内站点 ────────────── Direct.list
+ └─ 国内站点被误判 ──────── Direct.list（第 5 位优先直连）
 需要拦截？
  └─────────────────────── Block.list
 按 IP？
@@ -517,7 +311,7 @@ CS2 / Valve 游戏服务器 IP 段（619 条 IP-CIDR），游戏加速时让对�
    # proxy-groups
    - {name: 服务名, <<: *default}
 
-   # rules（越靠前优先级越高，必须在 Proxy / Global / China / MATCH 之前）
+   # rules（越靠前优先级越高，必须在 Global / China / MATCH 之前）
    - RULE-SET,服务名 / Domain,服务名
 
    # rule-providers
@@ -538,12 +332,6 @@ grep -nE '^(IP-CIDR|IP-CIDR6|SRC-IP-CIDR),' *.list | grep -v 'no-resolve'
 # 全角逗号 / 行尾空格
 grep -nE '，|\s+$' *.list
 ```
-
-> 当前存在的重复：
-> - **Custom-Long.list**：`1000qm.vip`、`huangguoai.com`、`v2rayssr.com`、`workbuddy.ai`
-> - **Check.list**：`incolumitas.com`、`vultr.com`
-> - **Direct.list**：`apple-bing.sbs`、`hao123.com`、`maocf1.top`、`sevenka.top`、`smtcdns.net`、`zhunchuanpb.com`、`IP-CIDR,219.146.1.66/32`
-> - **Proxy.list**：`asiassn.com`、`dns.google`、`dns.quad9.net`、`etcbbf.xyz`、`etcbbi.xyz`、`shittyurl.org`，以及 5 条 IP-CIDR（`189.79.31.0/24`、`49.205.113.0/24`、`62.181.50.0/24`、`90.21.198.0/24`、`94.241.215.0/24`，这几行还带行尾空格）
 
 ### 重命名 / 删除前
 

@@ -1,10 +1,15 @@
-# 域名关键字匹配
-# DOMAIN-KEYWORD,anthropic
-# DOMAIN-KEYWORD,Claude
-
+# 内容：Claude / Anthropic
+DOMAIN-KEYWORD,anthropic
+DOMAIN-KEYWORD,claude
+DOMAIN,servd-anthropic-website.b-cdn.net
+DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,clau.de
+DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,claude.com
 DOMAIN-SUFFIX,claudemcpclient.com
 DOMAIN-SUFFIX,claudeusercontent.com
-DOMAIN-SUFFIX,anthropic.com
-DOMAIN-SUFFIX,claude.ai
+
+# 支付与风控（Stripe）
+DOMAIN-SUFFIX,stripe.com
+DOMAIN-SUFFIX,stripe.network
+DOMAIN-SUFFIX,stripecdn.com
