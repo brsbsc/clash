@@ -42,9 +42,9 @@ https://cdn.jsdelivr.net/gh/brsbsc/clash@main/list/<文件名>
 | Direct.list | 直连优先白名单（授时、国内公共 DNS 及自定义直连） | 9 | [Direct](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/Direct) | **smart.yaml → 国内**（第 5 位） |
 | TargetIP.list | 指定目标 IP | 5 | — | **smart.yaml → Custom-Long**、ini/nodnsleak4.ini（DIRECT） |
 | SourceIP.list | 指定局域网源 IP 直连 | 1 | — | **smart.yaml → 国内**、ini/nodnsleak4.ini、ini/clashfull.list |
-| ChatGPT.list | OpenAI / ChatGPT / Sora（含 Stripe 支付风控） | 12 | [OpenAI](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/OpenAI)（35） | 未引用（smart.yaml 用上游 OpenAI） |
-| Claude.list | Claude / Anthropic（含 Stripe 支付风控） | 12 | [Claude](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/Claude)（3） | **smart.yaml → Claude**、ini/clashfull.list |
-| Gemini.list | Gemini / AI Studio / NotebookLM / Antigravity | 38 | [Gemini](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/Gemini)（13） | 未引用（smart.yaml 用上游 Gemini） |
+| ChatGPT.list | OpenAI / ChatGPT / Sora（含 Stripe 支付风控） | 12 | `geosite/openai.mrs` | **smart.yaml → ChatGPT** |
+| Claude.list | Claude / Anthropic（含 Stripe 支付风控） | 12 | `geosite/anthropic.mrs` | **smart.yaml → Claude**、ini/clashfull.list |
+| Gemini.list | Gemini / AI Studio / NotebookLM / Antigravity | 38 | `geosite/google-deepmind.mrs` | **smart.yaml → Gemini** |
 | Grok.list | Grok / xAI | 6 | 无 | **smart.yaml → Grok**、ini/clashfull.list |
 | MetaAi.list | Meta AI + Perplexity / Groq / Dify / Genspark / Manus / Skywork | 11 | 无 | **smart.yaml → Meta AI**、ini/clashfull.list |
 | Check.list | IP 检测 / 测速 / 分流测试站点 | 59 | [Speedtest](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/Speedtest)（8） | **smart.yaml → Test**、ini/clashfull.list |
@@ -162,7 +162,7 @@ OpenAI / ChatGPT / Sora、高级语音实时通信（LiveKit 专属子域）及 
 
 #### 使用说明
 - 包含完整 Stripe 支付与反欺诈风控三件套：`stripe.com`、`stripe.network`（Radar 指纹与 IP 风控检测）、`stripecdn.com`。
-- smart.yaml 目前用上游 [OpenAI.list](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/OpenAI)（上游缺 `stripe.network` 且带无关 ASN）；可按需切到本文件。
+- smart.yaml 的 **ChatGPT** 组引用本文件。
 
 ---
 
@@ -197,7 +197,7 @@ Google AI 全家桶专属域名：Gemini、DeepMind、AI Studio、Generative Lan
 | DOMAIN-SUFFIX | 38 |
 
 #### 使用说明
-- 比上游 [Gemini.list](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash/Gemini) 覆盖更全（含 NotebookLM、Jules、Antigravity 等）且无 `gemini://` 协议脏数据，需要时可在 smart.yaml 中切到本文件。
+- smart.yaml 的 **Gemini** 组引用本文件，确保 Google 搜索走香港节点时，Antigravity / AI Studio / NotebookLM 依然固定走解锁地区节点。
 
 ---
 
