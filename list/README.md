@@ -341,6 +341,8 @@ grep -nE '，|\s+$' *.list
 grep -rn "list/文件名" ../../smart.yaml ../ini/
 ```
 
-### 生效
+### 生效与防 DNS 泄露要点
 
-smart.yaml 的规则集 `interval: 86400`（每天自动更新一次）。急用时在 zashboard 的规则集页面手动更新，或重启内核。raw 链接有几分钟缓存，jsDelivr CDN 缓存更久。
+- **规则刷新**：smart.yaml 的规则集 `interval: 86400`（每天自动更新一次）。急用时在 zashboard 的规则集页面手动更新，或重启内核。raw 链接有几分钟缓存，jsDelivr CDN 缓存更久。
+- **IP 规则防泄露**：所有 `IP-CIDR` / `IP-CIDR6` / `SRC-IP-CIDR` 条目末尾必须带 `,no-resolve`，防止为了匹配 IP 而在本地触发 DNS 解析。
+- **上游 DoH 与 OpenClash 配合**：`smart.yaml` 中海外 `nameserver-policy` 仅保留纯 IP 形式 DoH（`1.1.1.1` / `8.8.8.8#所有-智选`），不使用域名形式（如 `dns.google`），避免被 `default-nameserver` 在国内解析；OpenClash 主路由建议将本地 DNS 劫持设为「防火墙转发」并在 LAN 的 DHCPv6 中不下发 IPv6 DNS，防止运营商 IPv6 DNS 抢答泄露。
