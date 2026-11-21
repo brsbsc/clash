@@ -1,6 +1,7 @@
 # 长期代理补充列表（排在第 3 位，优先于所有上游业务规则）
 
 # === AI、编程与中转服务 ===
+DOMAIN-SUFFIX,poke.com
 DOMAIN-SUFFIX,1key.me
 DOMAIN-SUFFIX,88code.org
 DOMAIN-SUFFIX,agentrouter.org
