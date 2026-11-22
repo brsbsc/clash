@@ -88,6 +88,7 @@ DOMAIN-SUFFIX,trade.gaijin.net
 
 # === 机场、VPS、CDN 与免费域名 ===
 DOMAIN-SUFFIX,ovhcloud.com
+DOMAIN-SUFFIX,kimsufi.com
 DOMAIN-KEYWORD,candytally
 DOMAIN-KEYWORD,hongxing
 DOMAIN-SUFFIX,1000qm.vip
